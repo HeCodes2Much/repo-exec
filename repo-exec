@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File :
+#   repo-exec
+#Author :
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github :
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Sun 17 July 2022, 02:12:45 PM [GMT+1]
+#Last edited:
+#   Sun 17 July 2022, 02:30:56 PM [GMT+1]
+#
+#Description:
+#   <Todo>
+#
+#Dependencies:
+#   <None>
+#
+
+repowm_preferences="/opt/repowm/preferences.json"
+repomenu_preferences="/opt/repomenu/preferences.json"
+
+repowmGetFunction() {
+  eval $(cat $repowm_preferences | jq '.'$1 | sed s/\"//g) &
+}
+
+repomenuGetFunction() {
+  eval $(cat $repomenu_preferences | jq '.'$1 | sed s/\"//g) &
+}
+
+case $1 in
+*systemmonitorcmd)
+  repowmGetFunction "$1"
+  ;;
+*settingscmd)
+  repowmGetFunction "$1"
+  ;;
+*startmenucmd)
+  repowmGetFunction "$1"
+  ;;
+*clipmenucmd)
+  repowmGetFunction "$1"
+  ;;
+*smartmenucmd)
+  repowmGetFunction "$1"
+  ;;
+*powermenucmd)
+  repowmGetFunction "$1"
+  ;;
+*repomenucmd)
+  repowmGetFunction "$1"
+  ;;
+*passmenucmd)
+  repowmGetFunction "$1"
+  ;;
+*filemanager)
+  repomenuGetFunction "$1"
+  ;;
+*hypervisor)
+  repomenuGetFunction "$1"
+  ;;
+*terminal)
+  repomenuGetFunction "$1"
+  ;;
+*webbrowser)
+  repomenuGetFunction "$1"
+  ;;
+*texteditor)
+  repomenuGetFunction "$1"
+  ;;
+*mailreader)
+  repomenuGetFunction "$1"
+  ;;
+*gitbrowser)
+  repomenuGetFunction "$1"
+  ;;
+*)
+  echo "repo-exec version: 2022.07.17" && exit 1
+  ;;
+esac
