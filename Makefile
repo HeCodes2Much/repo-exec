@@ -4,8 +4,8 @@
 include config.mk
 
 install: all
-	mkdir -p $(DESTDIR)$(PREFIXOPT)/repomw
-	cp -f opt/repowm/preferences.json $(DESTDIR)$(PREFIXOPT)/repomw
+	mkdir -p $(DESTDIR)$(PREFIXOPT)/repowm
+	cp -f opt/repowm/preferences.json $(DESTDIR)$(PREFIXOPT)/repowm
 
 	mkdir -p $(DESTDIR)$(PREFIXOPT)/repomenu
 	cp -f opt/repomenu/preferences.json $(DESTDIR)$(PREFIXOPT)/repomenu
@@ -15,7 +15,7 @@ install: all
 
 uninstall:
 	rm -rf $(DESTDIR)$(PREFIX)/bin/repo-exec\
-		$(DESTDIR)$(PREFIXOPT)/repomw\
+		$(DESTDIR)$(PREFIXOPT)/repowm\
 		$(DESTDIR)$(PREFIXOPT)/repomenu
 
 .PHONY: all install uninstall
