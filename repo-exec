@@ -12,7 +12,7 @@
 #Created:
 #   Sun 17 July 2022, 02:12:45 PM [GMT+1]
 #Last edited:
-#   Sun 17 July 2022, 02:30:56 PM [GMT+1]
+#   Tue 19 July 2022, 05:37:28 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -22,7 +22,13 @@
 #
 
 repowm_preferences="/opt/repowm/preferences.json"
+if [ -f "$XDG_CONFIG_HOME/repowm/preferences.json" ]; then
+  repowm_preferences="$XDG_CONFIG_HOME/repowm/preferences.json"
+fi
 repomenu_preferences="/opt/repomenu/preferences.json"
+if [ -f "$XDG_CONFIG_HOME/repomenu/preferences.json" ]; then
+  repomenu_preferences="$XDG_CONFIG_HOME/repomenu/preferences.json"
+fi
 
 repowmGetFunction() {
   eval $(cat $repowm_preferences | jq '.'$1 | sed s/\"//g) &

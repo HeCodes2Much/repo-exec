@@ -1,8 +1,8 @@
 # repomenu version
-VERSION = 2022.07.17
+VERSION = 2022.07.18
 
 # paths
-PREFIX = /usr/local
+PREFIX = /usr
 PREFIXOPT = /opt
 SHAREPREFIX = /usr/share
 
